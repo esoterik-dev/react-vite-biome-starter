@@ -1,69 +1,66 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR and code quality tools.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
+  uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
+  uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Linting and Formatting with Biome
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This template uses [Biome](https://biomejs.dev/) for fast, all-in-one linting and formatting for TypeScript, JavaScript, and more.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Install Biome** (if not already):
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+   ```sh
+   npm install --save-dev @biomejs/biome
+   ```
+
+2. **Initialize Biome** (if not already):
+
+   ```sh
+   npx biome init
+   ```
+
+   This will create a `biome.json` or `biome.jsonc` configuration file in your project root.
+
+3. **Format and Lint Your Code**
+
+   - To format your code:
+
+     ```sh
+     npx biome format .
+     ```
+
+   - To lint your code:
+
+     ```sh
+     npx biome lint .
+     ```
+
+4. **Recommended: VS Code Extension**
+
+   For best results, install the [Biome VS Code extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome) to enable on-save formatting and inline linting.
+
+### Example Biome Configuration
+
+Here’s a minimal example of a `biome.json`:
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+  "formatter": {
+    "enabled": true
   },
-])
+  "linter": {
+    "enabled": true
+  }
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+See the [Biome documentation](https://biomejs.dev/docs/) for more configuration options.
