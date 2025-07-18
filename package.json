@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "format": "biome format --write .",
-    "lint-ci": "biome ci .",
-    "lint-fix": "biome check --write --unsafe .",
-    "lint": "biome check .",
+    "lint-ci": "biome ci . && eslint .",
+    "lint-fix": "biome check --write --unsafe . && eslint --fix .",
+    "lint": "biome check . && eslint .",
+    "lint:eslint": "eslint .",
+    "lint:eslint-fix": "eslint --fix .",
     "preview": "vite preview"
   },
   "dependencies": {
