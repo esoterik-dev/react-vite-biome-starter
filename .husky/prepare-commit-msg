@@ -1,0 +1,2 @@
+# Optional: Add branch name to commit message
+# exec < /dev/tty && node_modules/.bin/cz --hook || true
