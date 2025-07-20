@@ -8,11 +8,11 @@ function App() {
       <div
         style={{
           marginTop: '2rem',
-          padding: '1.5rem',
+          padding: '1.5rem 1.25rem',
           backgroundColor: 'var(--color-surface)',
           border: '1px solid var(--color-border)',
           borderRadius: '8px',
-          maxWidth: '500px',
+          maxWidth: '520px',
           margin: '2rem auto',
         }}
       >
@@ -22,6 +22,10 @@ function App() {
         <ul style={{ textAlign: 'left', lineHeight: '1.8' }}>
           <li>
             <code style={{ color: 'var(--color-text)' }}>--color-text</code> - Main text color
+          </li>
+          <li>
+            <code style={{ color: 'var(--color-text-muted)' }}>--color-text-muted</code> -
+            Secondary/placeholder text
           </li>
           <li>
             <code
@@ -34,7 +38,20 @@ function App() {
             >
               --color-background
             </code>{' '}
-            - Page background
+            - Main page background
+          </li>
+          <li>
+            <code
+              style={{
+                color: 'var(--color-text)',
+                backgroundColor: 'var(--color-background-secondary)',
+                padding: '2px 4px',
+                borderRadius: '4px',
+              }}
+            >
+              --color-background-secondary
+            </code>{' '}
+            - Secondary sections
           </li>
           <li>
             <code
@@ -47,21 +64,36 @@ function App() {
             >
               --color-surface
             </code>{' '}
-            - Card/surface background
+            - Cards/components (current background)
           </li>
           <li>
-            <code style={{ color: 'var(--color-border)' }}>--color-border</code> - Border color
+            <code
+              style={{
+                color: 'var(--color-text)',
+                border: '2px solid var(--color-border)',
+                padding: '2px 4px',
+                borderRadius: '4px',
+              }}
+            >
+              --color-border
+            </code>{' '}
+            - Borders
           </li>
           <li>
-            <code style={{ color: 'var(--color-primary)' }}>--color-primary</code> - Primary brand
-            color
+            <code style={{ color: 'var(--color-primary)' }}>--color-primary</code> - Brand color
           </li>
           <li>
             <code style={{ color: 'var(--color-primary-hover)' }}>--color-primary-hover</code> -
-            Primary hover state
+            Hover states
           </li>
           <li>
-            <code style={{ color: 'var(--color-accent)' }}>--color-accent</code> - Accent color
+            <code style={{ color: 'var(--color-success)' }}>--color-success</code> - Success states
+          </li>
+          <li>
+            <code style={{ color: 'var(--color-warning)' }}>--color-warning</code> - Warnings
+          </li>
+          <li>
+            <code style={{ color: 'var(--color-error)' }}>--color-error</code> - Errors
           </li>
         </ul>
       </div>
