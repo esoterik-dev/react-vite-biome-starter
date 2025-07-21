@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "oven.bun-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "yoavbls.pretty-ts-errors",
+
+    // Optional
+    "zignd.html-css-class-completion"
+  ]
+}
