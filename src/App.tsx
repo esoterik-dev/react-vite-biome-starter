@@ -10,7 +10,7 @@ function App() {
           marginTop: '2rem',
           padding: '1.5rem 1.25rem',
           backgroundColor: 'var(--color-surface)',
-          border: '1px solid var(--color-border)',
+          border: '2px solid var(--color-border)',
           borderRadius: '8px',
           maxWidth: '520px',
           margin: '2rem auto',
