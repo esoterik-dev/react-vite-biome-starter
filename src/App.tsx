@@ -1,4 +1,17 @@
 function App() {
+  const commonBackgroundStyle = {
+    padding: '2px 4px',
+    borderRadius: '4px',
+  };
+
+  const commonShadowStyle = {
+    padding: '0.5rem 1rem',
+    borderRadius: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+  } as const;
+
   return (
     <div style={{ textAlign: 'center', padding: '2rem' }}>
       <h1 style={{ color: 'var(--color-primary)', marginBottom: '1rem' }}>Hello World!</h1>
@@ -30,10 +43,9 @@ function App() {
           <li>
             <code
               style={{
+                ...commonBackgroundStyle,
                 color: 'var(--color-background)',
                 backgroundColor: 'var(--color-text)',
-                padding: '2px 4px',
-                borderRadius: '4px',
               }}
             >
               --color-background
@@ -43,10 +55,9 @@ function App() {
           <li>
             <code
               style={{
+                ...commonBackgroundStyle,
                 color: 'var(--color-text)',
                 backgroundColor: 'var(--color-background-secondary)',
-                padding: '2px 4px',
-                borderRadius: '4px',
               }}
             >
               --color-background-secondary
@@ -56,10 +67,9 @@ function App() {
           <li>
             <code
               style={{
+                ...commonBackgroundStyle,
                 color: 'var(--color-text)',
                 backgroundColor: 'var(--color-surface)',
-                padding: '2px 4px',
-                borderRadius: '4px',
               }}
             >
               --color-surface
@@ -69,10 +79,9 @@ function App() {
           <li>
             <code
               style={{
+                ...commonBackgroundStyle,
                 color: 'var(--color-text)',
                 border: '2px solid var(--color-border)',
-                padding: '2px 4px',
-                borderRadius: '4px',
               }}
             >
               --color-border
@@ -80,20 +89,84 @@ function App() {
             - Borders
           </li>
           <li>
-            <code style={{ color: 'var(--color-primary)' }}>--color-primary</code> - Brand color
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-primary)' }}>
+              --color-primary
+            </code>{' '}
+            - Brand color
           </li>
           <li>
-            <code style={{ color: 'var(--color-primary-hover)' }}>--color-primary-hover</code> -
-            Hover states
+            <code
+              style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-primary-hover)' }}
+            >
+              --color-primary-hover
+            </code>{' '}
+            - Hover states
           </li>
           <li>
-            <code style={{ color: 'var(--color-success)' }}>--color-success</code> - Success states
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-accent)' }}>
+              --color-accent
+            </code>{' '}
+            - Accent color
           </li>
           <li>
-            <code style={{ color: 'var(--color-warning)' }}>--color-warning</code> - Warnings
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-info)' }}>
+              --color-info
+            </code>{' '}
+            - Informational text
           </li>
           <li>
-            <code style={{ color: 'var(--color-error)' }}>--color-error</code> - Errors
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-success)' }}>
+              --color-success
+            </code>{' '}
+            - Success states
+          </li>
+          <li>
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-warning)' }}>
+              --color-warning
+            </code>{' '}
+            - Warnings
+          </li>
+          <li>
+            <code style={{ ...commonBackgroundStyle, backgroundColor: 'var(--color-error)' }}>
+              --color-error
+            </code>{' '}
+            - Errors
+          </li>
+          <li>
+            Shadows
+            <div
+              style={{
+                marginBlock: '0.5rem',
+                display: 'flex',
+                gap: '1.5rem',
+                justifyContent: 'space-evenly',
+              }}
+            >
+              <div
+                style={{
+                  ...commonShadowStyle,
+                  boxShadow: 'var(--shadow-sm)',
+                }}
+              >
+                <code>--shadow-sm</code> Small
+              </div>
+              <div
+                style={{
+                  ...commonShadowStyle,
+                  boxShadow: 'var(--shadow-md)',
+                }}
+              >
+                <code>--shadow-md</code> Medium
+              </div>
+              <div
+                style={{
+                  ...commonShadowStyle,
+                  boxShadow: 'var(--shadow-lg)',
+                }}
+              >
+                <code>--shadow-lg</code> Large
+              </div>
+            </div>
           </li>
         </ul>
       </div>
