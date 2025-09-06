@@ -24,8 +24,8 @@
   --color-text: var(--gray-900);
   --color-text-muted: var(--gray-600);
   --color-background: #ffffff;
-  --color-background-secondary: var(--gray-50);
-  --color-surface: #ffffff;
+  --color-background-secondary: var(--gray-200);
+  --color-surface: var(--gray-50);
   --color-border: var(--gray-200);
   --color-border-muted: var(--gray-100);
 
